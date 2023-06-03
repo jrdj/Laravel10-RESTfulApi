@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Api\V1\CompleteTaskController;
 use App\Http\Controllers\Api\V1\TaskController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\Api\V1\UserController;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     });
 });
 
-Route::post('login',[UserController::class,'login']);
+Route::post('v1/login',[UserController::class,'login']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
