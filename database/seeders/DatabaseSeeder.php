@@ -19,9 +19,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
        Task::factory(10)->create();
-       Sale::factory(5)->create();
-
-       DB::table('users')->insert([
+   
+       DB::table('users')->insert([[
         'name'=> 'Jrdj',
         'email'=> 'Jrdj@gmail.com',
         'password'=> Hash::make('123123')
@@ -30,7 +29,10 @@ class DatabaseSeeder extends Seeder
          'name'=> 'Micha',
          'email'=> 'Micha@gmail.com',
          'password'=> Hash::make('qweqwe')
-        ],
+       ],]
       );
+
+      //Sales references to users id
+      Sale::factory(20)->create();
     }
 }

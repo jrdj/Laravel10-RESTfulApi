@@ -17,16 +17,16 @@ class SaleFactory extends Factory
     public function definition(): array
     {
         return [
-            'sale_owner_id' => rand(1,2),
+            'sale_owner_id' => fake()->numberBetween($min = 1, $max = 2),
             'consumer_name' => fake()->name(),
             'item_code' => fake()->ean8(),
             'item_quantity' => fake()->numberBetween($min = 1, $max = 10),
             'item_price' => fake()->numberBetween($min = 50, $max = 500),
             'shipping_fee' => fake()->numberBetween($min = 20, $max = 200),
-            'mode_of_payment' => fake()->numberBetween($min = 1, $max = 2),
-            'payment_status' => fake()->numberBetween($min = 1, $max = 4),
-            'courier' => fake()->numberBetween($min = 1, $max = 3),
-            'location' => fake()->State(),
+            'mode_of_payment_id' => fake()->numberBetween($min = 1, $max = 2),
+            'payment_status_id' => fake()->numberBetween($min = 1, $max = 4),
+            'courier_id' => fake()->numberBetween($min = 1, $max = 3),
+            'location' => fake()->state(),
         ];
     }
 }

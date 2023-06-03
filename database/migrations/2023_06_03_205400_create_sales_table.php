@@ -50,11 +50,11 @@ return new class extends Migration
             $table->timestamps();
         });
         //Insert courier default values
-        DB::table('payment_status')->insert(
+        DB::table('courier')->insert(
             [
-                ['ps_name' => 'Meet Up', 'created_at' => now()],
-                ['ps_name' => 'Pick Up', 'created_at' => now()],
-                ['ps_name' => 'Shipping', 'created_at' => now()]
+                ['cor_name' => 'Meet Up', 'created_at' => now()],
+                ['cor_name' => 'Pick Up', 'created_at' => now()],
+                ['cor_name' => 'Shipping', 'created_at' => now()]
             ]
         );
 
