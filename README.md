@@ -14,9 +14,14 @@
 3) php artisan key:generate
 4) php artisan serve
 5) php artisan migrate --seed
-6) npm install && npm run dev
 
 ## Postman 
+
+Auth - POST http://localhost:8000/api/v1/login
+Test User
+email = jrdj@gmail.com 
+password = 123123
+
 
 Retrieve all data - GET http://localhost:8000/api/v1/tasks
 

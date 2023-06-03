@@ -21,7 +21,6 @@ class UserController extends Controller
                 'user'=> $user,
                 'token'=> $token
             ];
-
             return response($response, 201);
     }
 }
