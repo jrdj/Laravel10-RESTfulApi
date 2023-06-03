@@ -17,7 +17,9 @@ class SaleFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'sale_owner_id' => rand(1,2),
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
         ];
     }
 }
