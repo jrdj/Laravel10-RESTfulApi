@@ -23,10 +23,11 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
         Route::prefix('v1')->group(function(){
         Route::apiResource('/tasks', TaskController::class);
         Route::patch('/tasks/{task}/complete', CompleteTaskController::class);
+        Route::apiResource('/sales', SaleController::class);
     });
 });
 
-Route::apiResource('v1/sales', SaleController::class);
+
 
 Route::post('v1/login',[UserController::class,'login']);
 
