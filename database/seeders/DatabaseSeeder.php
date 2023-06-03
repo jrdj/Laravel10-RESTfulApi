@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Sale;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -18,12 +19,18 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
        Task::factory(10)->create();
-    //    User::factory(5)->create();
+       Sale::factory(5)->create();
 
        DB::table('users')->insert([
         'name'=> 'Jrdj',
         'email'=> 'Jrdj@gmail.com',
         'password'=> Hash::make('123123')
-       ]);
+       ],
+       [
+         'name'=> 'Micha',
+         'email'=> 'Micha@gmail.com',
+         'password'=> Hash::make('qweqwe')
+        ],
+      );
     }
 }

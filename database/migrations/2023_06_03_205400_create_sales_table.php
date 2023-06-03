@@ -63,9 +63,9 @@ return new class extends Migration
             $table->unsignedBigInteger('sale_owner_id');
             $table->string('consumer_name');
             $table->string('item_code');
-            $table->string('item_quantity');
-            $table->string('item_price');
-            $table->string('shipping_fee');
+            $table->integer('item_quantity');
+            $table->integer('item_price');
+            $table->integer('shipping_fee');
             $table->unsignedBigInteger('mode_of_payment_id');
             $table->unsignedBigInteger('payment_status_id');
             $table->unsignedBigInteger('courier_id');
