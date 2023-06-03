@@ -7,6 +7,8 @@ namespace Database\Seeders;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +18,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
        Task::factory(10)->create();
-       User::factory(5)->create();
+    //    User::factory(5)->create();
+
+       DB::table('users')->insert([
+        'name'=> 'Jrdj',
+        'email'=> 'Jrdj@gmail.com',
+        'password'=> Hash::make('123123')
+       ]);
     }
 }
