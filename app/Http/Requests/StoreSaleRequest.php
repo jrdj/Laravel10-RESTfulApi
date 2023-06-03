@@ -28,9 +28,9 @@ class StoreSaleRequest extends FormRequest
             'item_quantity'  => 'required|integer',
             'item_price'   => 'required|integer',
             'shipping_fee'  => 'required|integer',
-            'mode_of_payment_id'  => 'required|integer',
-            'payment_status_id'  => 'required|integer',
-            'courier_id'  => 'required|integer',
+            'mode_of_payment_id'  => 'integer',
+            'payment_status_id'  => 'integer',
+            'courier_id'  => 'integer',
             'location'  => 'required|String|max:255'
         ];
     }
