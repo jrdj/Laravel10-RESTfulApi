@@ -31,5 +31,8 @@ Update all attributes - PUT http://localhost:8000/api/v1/tasks/11
 
 Update single attribute - PATCH http://localhost:8000/api/v1/tasks/11/complete
 
-Destroy data- DELETE http://localhost:8000/api/v1/tasks/11
+Headers: Key=Accept, Value=application/json
+         Body: none
+         
+Destroy data - DELETE http://localhost:8000/api/v1/tasks/11
 
