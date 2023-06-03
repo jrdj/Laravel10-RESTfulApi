@@ -18,6 +18,7 @@
 ## Postman 
 
 Auth - POST http://localhost:8000/api/v1/login
+
 Test User
 email = jrdj@gmail.com 
 password = 123123
