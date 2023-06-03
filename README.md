@@ -15,7 +15,7 @@
 4) php artisan serve
 5) php artisan migrate --seed
 
-## Postman 
+## Postman - collection file located @ /public
 
 Auth - POST http://localhost:8000/api/v1/login
 Test User
