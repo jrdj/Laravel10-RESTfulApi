@@ -14,8 +14,13 @@ class SaleController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return SaleResource::collection(Sale::all());
+    {   
+        $sale = Sale::leftJoin('mode_of_payments', 'sales.mode_of_payment_id', '=', 'mode_of_payments.id')
+            ->leftJoin('payment_statuses', 'sales.payment_status_id', '=', 'payment_statuses.id')
+            ->leftJoin('couriers', 'sales.courier_id', '=', 'couriers.id')
+            ->get();
+
+        return SaleResource::collection($sale);
     }
 
     /**

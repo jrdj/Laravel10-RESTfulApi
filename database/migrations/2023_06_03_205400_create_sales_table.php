@@ -13,14 +13,14 @@ return new class extends Migration
     public function up(): void
     {
         //Create mode_of_payment table
-        Schema::create('mode_of_payment', function (Blueprint $table) {
+        Schema::create('mode_of_payments', function (Blueprint $table) {
             $table->id();
             $table->string('mop_name');
             $table->timestamps();
         });
 
         //Insert mode_of_payment default values
-        DB::table('mode_of_payment')->insert(
+        DB::table('mode_of_payments')->insert(
             [
                 ['mop_name' => 'Cash', 'created_at' => now()],
                 ['mop_name' => 'Gcash', 'created_at' => now()]
@@ -28,13 +28,13 @@ return new class extends Migration
         );
 
         //Create payment_status table
-        Schema::create('payment_status', function (Blueprint $table) {
+        Schema::create('payment_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('ps_name');
             $table->timestamps();
         });
         //Insert payment_status default values
-        DB::table('payment_status')->insert(
+        DB::table('payment_statuses')->insert(
             [
                 ['ps_name' => 'Paid', 'created_at' => now()],
                 ['ps_name' => 'Bogus', 'created_at' => now()],
@@ -44,13 +44,13 @@ return new class extends Migration
         );
 
         //Create courier table
-        Schema::create('courier', function (Blueprint $table) {
+        Schema::create('couriers', function (Blueprint $table) {
             $table->id();
             $table->string('cor_name');
             $table->timestamps();
         });
         //Insert courier default values
-        DB::table('courier')->insert(
+        DB::table('couriers')->insert(
             [
                 ['cor_name' => 'Meet Up', 'created_at' => now()],
                 ['cor_name' => 'Pick Up', 'created_at' => now()],

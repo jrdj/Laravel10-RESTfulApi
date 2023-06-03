@@ -22,10 +22,11 @@ class SaleResource extends JsonResource
             'item_quantity' => $this->item_quantity,
             'item_price' => $this->item_price,
             'shipping_fee' => $this->shipping_fee,
-            'mode_of_payment_id' => $this->mode_of_payment_id,
-            'payment_status_id' => $this->payment_status_id,
-            'courier_id' => $this->courier_id,
-            'location' => $this->courier_id,
+            'total_amount' => $this->item_price+$this->shipping_fee,
+            'mode_of_payment_id' => $this->mode_of_payment->mop_name,
+            'payment_status_id' => $this->payment_status->ps_name,
+            'courier_id' => $this->courier->cor_name,
+            'location' => $this->location,
           ];
     }
 }
