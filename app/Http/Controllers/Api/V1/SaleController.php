@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Sale;
 use App\Http\Requests\StoreSaleRequest;
 use App\Http\Requests\UpdateSaleRequest;
+use App\Http\Resources\SaleResource;
 
 class SaleController extends Controller
 {
@@ -14,7 +15,7 @@ class SaleController extends Controller
      */
     public function index()
     {
-        //
+        return SaleResource::collection(Sale::all());
     }
 
     /**

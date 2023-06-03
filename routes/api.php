@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\CompleteTaskController;
+use App\Http\Controllers\Api\V1\SaleController;
 use App\Http\Controllers\Api\V1\TaskController;
 use App\Http\Controllers\Api\V1\UserController;
 use App\Models\Task;
@@ -24,6 +25,8 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
         Route::patch('/tasks/{task}/complete', CompleteTaskController::class);
     });
 });
+
+Route::apiResource('v1/sales', SaleController::class);
 
 Route::post('v1/login',[UserController::class,'login']);
 
