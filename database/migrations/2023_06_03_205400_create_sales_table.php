@@ -89,9 +89,12 @@ return new class extends Migration
     {
         // Tables Drop
         // DROP TABLE sales,mode_of_payments, payment_statuses, couriers
-        Schema::dropIfExists('sales');
+        // php artisan migrate:fresh
+        // php artisan migrate --seed
+        
         Schema::dropIfExists('mode_of_payment');
         Schema::dropIfExists('payment_status');
         Schema::dropIfExists('courier');
+        Schema::dropIfExists('sales');
     }
 };
