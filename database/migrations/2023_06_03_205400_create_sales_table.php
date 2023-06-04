@@ -72,11 +72,13 @@ return new class extends Migration
             $table->string('location');
             $table->timestamps();
 
-            $table->foreign('sale_owner_id')->references('id')->on('users');
-            $table->foreign('mode_of_payment_id')->references('id')->on('mode_of_payment');
-            $table->foreign('payment_status_id')->references('id')->on('payment_status');
-            $table->foreign('courier_id')->references('id')->on('courier');
+            $table->foreign('sale_owner_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('mode_of_payment_id')->references('id')->on('mode_of_payments')->onDelete('cascade');
+            $table->foreign('payment_status_id')->references('id')->on('payment_statuses')->onDelete('cascade');
+            $table->foreign('courier_id')->references('id')->on('couriers')->onDelete('cascade');
         });
+
+       
         
     }
 
@@ -85,6 +87,8 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // Tables Drop
+        // DROP TABLE sales,mode_of_payments, payment_statuses, couriers
         Schema::dropIfExists('sales');
         Schema::dropIfExists('mode_of_payment');
         Schema::dropIfExists('payment_status');
